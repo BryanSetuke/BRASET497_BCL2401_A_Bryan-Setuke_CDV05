@@ -165,14 +165,14 @@
         <section class="contact section" id="contact">
             <h2 class="section-title">Contact</h2>
 
-            <div class="contact__container bd-grid">
-                <form action="" class="contact__form">
-                    <input type="text" placeholder="Name" class="contact__input"/>
-                    <input type="mail" placeholder="Email" class="contact__input"/>
-                    <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                    <a href="https://bryansetuke6@gmail.com" class="contact__button button" id="send-button">Send</a>
-                </form>
-            </div>
+         <div class="contact__container bd-grid">
+            <form action="" class="contact__form" id="contact-form">
+               <input type="text" placeholder="Name" class="contact__input" id="contact-name" required/>
+               <input type="email" placeholder="Email" class="contact__input" id="contact-email" required/>
+               <textarea placeholder="Message" id="contact-message" cols="0" rows="10" class="contact__input" required></textarea>
+               <a href="https://wa.me/+27658183616" class="contact__button button" id="send-button">Send</a>
+            </form>
+         </div>   
         </section>
     </main>
 
@@ -194,15 +194,16 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-    document.getElementById('send-button').addEventListener('click', function() {
+    document.getElementById('send-button').addEventListener('click', function(event) {
         const name = document.getElementById('contact-name').value;
         const email = document.getElementById('contact-email').value;
         const message = document.getElementById('contact-message').value;
 
-        const subject = encodeURIComponent('Contact from your website');
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        const whatsappNumber = '+27658183616'; 
+        const text = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
 
-        window.location.href = `mailto:bryansetuke6@gmail.com?subject=${subject}&body=${body}`;
+        window.open(whatsappUrl, '_blank');
     });
 </script>
 </body>
