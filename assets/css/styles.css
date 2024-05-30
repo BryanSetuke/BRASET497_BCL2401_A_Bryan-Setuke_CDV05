@@ -176,6 +176,21 @@ img {
   cursor: pointer;
 }
 
+/* Button style for navigation */
+.button--nav {
+    background-color: var(--first-color);
+    color: #fff;
+    padding: .5rem 1.5rem;
+    border-radius: .5rem;
+    font-weight: var(--font-semi);
+    transition: .3s;
+}
+
+.button--nav:hover {
+    background-color: darken(var(--first-color), 10%);
+    box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+}
+
 /* Active menu */
 .active::after {
   position: absolute;
