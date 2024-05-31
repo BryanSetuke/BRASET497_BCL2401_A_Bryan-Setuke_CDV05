@@ -45,6 +45,19 @@ function scrollActive() {
 }
 window.addEventListener("scroll", scrollActive);
 
+document
+    .getElementById("send-button")
+    .addEventListener("click", function (event) {
+        const name = document.getElementById("contact-name").value;
+        const email = document.getElementById("contact-email").value;
+        const message = document.getElementById("contact-message").value;
+
+        const whatsappNumber = "+27658183616";
+        const text = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
+
+        window.open(whatsappUrl, "_blank");
+    });
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
     origin: "top",
